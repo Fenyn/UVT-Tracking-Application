@@ -4,25 +4,29 @@
 This project creates an object that can store 'view fragments' of videos and then calculate the 'unique view time' (UVT) of the video.
 
 ## Installing / Getting started
-
-First, create an array of VideoViewFragments using the VideoViewFragment class in this project. 
-
-To construct a VideoViewFragment, provide a start and end time (as an integer of milliseconds) for each fragment.
-
-Example:
-```shell
-VideoViewFragment viewFragment = new VideoViewFragment(0, 15000);
-```
-This will create a new view fragment with a start time of 0s and an end time of 15000ms or 15.000s
-
+To use this project, simply create an array of VideoViewFragments using the class provided in this project,
+then create a UVT_Calculator and call the CalculateTotalUVT method using the aforementioned array as input.
 
 ```shell
-UVT_Calculator uvt_calc = new UVT_Calculator();
-int totalUVT = uvt_calc.CalculateTotalUVT(arrayOfViewFragments)
-awesome-project "Do something!"  # prints "Nah."
+UVT_Calculator uvt_Calculator = new UVT_Calculator();
+
+ArrayList<VideoViewFragment> viewFragmentArrayList = new ArrayList<VideoViewFragment>();
+viewFragmentArrayList.add(new VideoViewFragment(0, 15000));
+viewFragmentArrayList.add(new VideoViewFragment(1500, 8000));
+viewFragmentArrayList.add(new VideoViewFragment(10000, 18000));
+
+int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);		
+
+System.out.println(totalUVT);
 ```
 
-Here you should say what actually happens when you execute the code above.
+In this example, we create a UVT_Calculator and array of VideoViewFragments. 
+Then, we populate the array with three view fragments.
+> Fragment 1 - Start Time: 0s, End Time: 15.000s
+> Fragment 2 - Start Time: 1.500s, End Time: 8.000s
+> Fragment 3 - Start Time: 10.000s, End Time: 18.000s
+
+Finally, we provide those fragments as input to uvt_Calculator.CalculateTotalUVT() and print the result.
 
 ### Initial Configuration
 
