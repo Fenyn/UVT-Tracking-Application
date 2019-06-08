@@ -22,10 +22,11 @@ System.out.println(totalUVT);
 
 In this example, we create a UVT_Calculator and array of VideoViewFragments. 
 Then, we populate the array with three view fragments.
-> Fragment 1 - Start Time: 0s, End Time: 15.000s
-> Fragment 2 - Start Time: 1.500s, End Time: 8.000s
-> Fragment 3 - Start Time: 10.000s, End Time: 18.000s
-
+```shell
+Fragment 1 - Start Time: 0s, End Time: 15.000s
+Fragment 2 - Start Time: 1.500s, End Time: 8.000s
+Fragment 3 - Start Time: 10.000s, End Time: 18.000s
+```
 Finally, we provide those fragments as input to uvt_Calculator.CalculateTotalUVT() and print the result.
 
 ### Initial Configuration
