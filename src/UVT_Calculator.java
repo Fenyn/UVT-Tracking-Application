@@ -3,17 +3,16 @@ import java.util.ArrayList;
 public class UVT_Calculator {
 
 	public static void main(String[] args) {
+
+		UVT_Calculator uvt_Calculator = new UVT_Calculator();
 		
+		//create a small array of view fragments to work with
 		ArrayList<VideoViewFragment> viewFragmentArrayList = new ArrayList<VideoViewFragment>();
 		viewFragmentArrayList.add(new VideoViewFragment(0, 15000));
 		viewFragmentArrayList.add(new VideoViewFragment(1500, 8000));
 		viewFragmentArrayList.add(new VideoViewFragment(10000, 18000));
-
 		
-		UVT_Calculator uvt_Calculator = new UVT_Calculator();
-		
-		int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);
-		
+		int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);		
 		
 		System.out.println(totalUVT);
 		
