@@ -57,12 +57,5 @@ What's all the bells and whistles this project can perform?
 * Sort video view fragments by their view start time
 * Calculate the total Unique View Time for an array of view fragments
 
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
-
-
 ## Licensing
 The code in this project is licensed under GNU General Public License v3.0.
