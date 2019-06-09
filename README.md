@@ -60,4 +60,4 @@ Copy-paste as many of these as you need.
 
 
 ## Licensing
-"The code in this project is licensed under GNU General Public License v3.0."
+The code in this project is licensed under GNU General Public License v3.0.

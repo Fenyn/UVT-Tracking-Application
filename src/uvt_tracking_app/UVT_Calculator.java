@@ -1,31 +1,25 @@
+package uvt_tracking_app;
 import java.util.ArrayList;
 
-public class UVT_Calculator {
-
-	public static void main(String[] args) {
-
-		UVT_Calculator uvt_Calculator = new UVT_Calculator();
-		
-		//create a small array of view fragments to work with
-		ArrayList<VideoViewFragment> viewFragmentArrayList = new ArrayList<VideoViewFragment>();
-		viewFragmentArrayList.add(new VideoViewFragment(0, 15000));
-		viewFragmentArrayList.add(new VideoViewFragment(1500, 8000));
-		viewFragmentArrayList.add(new VideoViewFragment(10000, 18000));
-		
-		int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);		
-		
-		System.out.println(totalUVT);
-		
-	}
-
+public class UVT_Calculator {	
 	
+	//Calculates the UVT for a video, given an array of view fragments.
+	//It is important to note that while the provided array does not need to be sorted,
+	//the algorithm only works correctly on a sorted array. 
 	public int CalculateTotalUVT(ArrayList<VideoViewFragment> viewFragmentArray) {
 		int totalViewTime = 0;		
 		int timeCounter = 0;
 		
-		//iterate over every view fragment we have tracked
-		//after each case in this loop, we continue to the next element
-		//the time counter keeps track of how far down the total length of the video we've gone
+		viewFragmentArray.sort(null);
+		for (VideoViewFragment videoViewFragment : viewFragmentArray) {
+			System.out.println(videoViewFragment.viewStartTime);
+		}
+		
+		/* iterate over every view fragment we have tracked
+		 * after each case in this loop, we continue to the next element
+		 * NOTE: I chose to use continue instead of a long if/else statement
+		 * 		 because I think it makes the code more readable
+		 */
 		for (int i = 0; i < viewFragmentArray.size(); i++) {
 			VideoViewFragment currentFragment = viewFragmentArray.get(i);
 			
