@@ -5,7 +5,7 @@ This project creates an object that can store 'view fragments' of videos and the
 
 ## Installing / Getting started
 
-> To use this application as an executable, follow these steps:
+### To use this application as an executable, follow these steps:
 
 To use this project, clone or download this repository. Open up this repository, then find and edit launch_UVT.bat. 
 Inside, find this line:
@@ -23,7 +23,7 @@ It will ask how many fragments you wish to input, then ask you to input the star
 Once you've entered all of your fragments, the total UVT will be displayed on screen.
 
 
-> If you instead wish to use this application through a code interface, follow these steps instead:
+### If you instead wish to use this application through a code interface, follow these steps instead:
 
 To use this project, simply create an array of VideoViewFragments using the class provided in this project,
 then create a UVT_Calculator and call the CalculateTotalUVT method using the aforementioned array as input.
