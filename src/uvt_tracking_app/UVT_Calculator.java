@@ -11,9 +11,6 @@ public class UVT_Calculator {
 		int timeCounter = 0;
 		
 		viewFragmentArray.sort(null);
-		for (VideoViewFragment videoViewFragment : viewFragmentArray) {
-			System.out.println(videoViewFragment.viewStartTime);
-		}
 		
 		/* iterate over every view fragment we have tracked
 		 * after each case in this loop, we continue to the next element
