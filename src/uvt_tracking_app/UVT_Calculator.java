@@ -24,7 +24,7 @@ public class UVT_Calculator {
 			//we count the entire length of it as view time
 			if (timeCounter == 0) {
 				timeCounter = currentFragment.viewEndTime;
-				totalViewTime += timeCounter;
+				totalViewTime += currentFragment.totalViewTime;
 				continue;
 			}
 			

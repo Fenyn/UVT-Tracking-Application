@@ -4,7 +4,7 @@ public class VideoViewFragment implements Comparable<VideoViewFragment>{
 	
 	int viewStartTime;
 	int viewEndTime;
-	float totalViewTime;
+	int totalViewTime;
 	
 	VideoViewFragment(int startTime, int endTime){
 		if(endTime < startTime) {
