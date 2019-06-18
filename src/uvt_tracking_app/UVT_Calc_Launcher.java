@@ -28,9 +28,9 @@ public class UVT_Calc_Launcher {
 
 		scanner.close();
 		
-		int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);		
+		//int totalUVT = uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList);		
 		
-		System.out.println("Total UVT: " + totalUVT + " milliseconds | " + (double)totalUVT/1000 + " seconds");
+		//System.out.println("Total UVT: " + totalUVT + " milliseconds | " + (double)totalUVT/1000 + " seconds");
 	}
 
 }

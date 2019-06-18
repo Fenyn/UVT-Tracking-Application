@@ -9,6 +9,7 @@ public class UVT_Calculator_Tests {
 		UVT_Calculator uvt_Calculator = new UVT_Calculator();
 		ArrayList<VideoViewFragment> viewFragmentArrayList = new ArrayList<VideoViewFragment>();
 
+		/*
 		// check a single element
 		viewFragmentArrayList.add(new VideoViewFragment(0, 10000));
 		assertEquals(10000, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList));
@@ -103,6 +104,58 @@ public class UVT_Calculator_Tests {
 		assertEquals(360, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList));
 		System.out.println("Multiple elements with large fragment count with overlaps - clear!");
 		viewFragmentArrayList.clear();
+		*/
+		
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		assertEquals(45, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 0, 50));
+		System.out.println("Single fragment outside end of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		assertEquals(50, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 40, 100));
+		System.out.println("Single fragment outside beginning of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		assertEquals(60, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 25, 100));
+		System.out.println("Fragment overlapping start of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		assertEquals(60, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 25, 100));
+		System.out.println("Multiple fragment overlapping start of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		assertEquals(60, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 0, 75));
+		System.out.println("Fragment overlapping end of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 35));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(40, 80));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 100));
+		viewFragmentArrayList.add(new VideoViewFragment(70, 130));
+		assertEquals(70, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 0, 75));
+		System.out.println("Multiple fragment overlapping end of chapter - pass!");
+		viewFragmentArrayList.clear();
+		
+		viewFragmentArrayList.add(new VideoViewFragment(0, 10));
+		viewFragmentArrayList.add(new VideoViewFragment(20, 50));
+		viewFragmentArrayList.add(new VideoViewFragment(60, 70));
+		assertEquals(20, uvt_Calculator.CalculateTotalUVT(viewFragmentArrayList, 25, 45));
+		System.out.println("25 to 45 - pass!");
 	}
 
 }
